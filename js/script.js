@@ -1,26 +1,40 @@
 // 1 - Palindroma
+
+// funzione per capire se la parola inserita è palindroma
+function controlloPalindroma(par){
+    var lunghezzaParola = par.length;
+    var inizioPar="";
+    var finePar="";
+    var palindromaPar = false;
+
+    //se la lunghezza della parola è pari controlla se è palindroma
+    if (lunghezzaParola % 2 == 0){
+        //concatena la prima metà della parola
+        for(var i=0; i<lunghezzaParola/2; i++){
+            inizioPar += par[i];
+        }
+
+        //concatena in senso inverso la seconda metà della parola
+        for(var i=lunghezzaParola-1; i>=lunghezzaParola/2; i--){
+            finePar += par[i];
+        }
+    }
+    //controlla se le due metà della parola sono uguali
+    if (inizioPar == finePar){
+        palindromaPar = true;
+    }
+
+    return palindromaPar;
+}
+// /funzione per capire se la parola inserita è palindroma
+
 // Chiedere all'utente di inserire una parola
+var parola=prompt("Inserisci una parola");
+var palindromaParola = controlloPalindroma(parola);
 
-// Creare una funzione per capire se la parola inserita è palindroma
+if (palindromaParola == true){
+    document.getElementById("palindroma").innerHTML = "La parola è palindroma";
+}else{
+    document.getElementById("palindroma").innerHTML = "La parola <strong>non </strong> è palindroma";
+}
 
-// se il numeri dei caratteri è dispari la parola non è palindroma
-
-//altrimenti se è pari controlla se è palindroma
-
-//dividi a metà la parola
-
-//invertire ordine caratteri della seconda metà della parola
-
-//controllare se sono uguali
-
-
-
-
-
-
-// 2 - Pari e Dispari
-// L'utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-// Sommiamo i due numeri
-// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-// Dichiariamo chi ha vinto.
